@@ -1,0 +1,24 @@
+name: Refresh layoff notices
+on:
+  schedule:
+    - cron: '17 9 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the current file
+        run: |
+          curl -fsSL -o data/layoffs.new https://launchyournextchapter.com/data/layoffs.csv
+          test "$(wc -l < data/layoffs.new)" -gt 1000
+          mv data/layoffs.new data/layoffs.csv
+      - name: Commit if it changed
+        run: |
+          git config user.name "nextchapter-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/layoffs.csv
+          git diff --cached --quiet || git commit -m "Weekly refresh of layoff notices"
+          git push

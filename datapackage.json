@@ -1,0 +1,30 @@
+{
+  "name": "us-warn-layoff-notices",
+  "title": "U.S. layoff notices (WARN Act), collected from state labor departments",
+  "description": "WARN Act layoff notices published by U.S. state labor departments, one row per filing.",
+  "homepage": "https://launchyournextchapter.com/layoffs",
+  "licenses": [{ "name": "CC-BY-4.0", "path": "https://creativecommons.org/licenses/by/4.0/", "title": "Creative Commons Attribution 4.0" }],
+  "sources": [{ "title": "State labor department WARN notice lists", "path": "https://launchyournextchapter.com/layoffs" }],
+  "resources": [
+    {
+      "name": "layoffs",
+      "path": "data/layoffs.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "state", "type": "string" },
+          { "name": "employer", "type": "string" },
+          { "name": "notice_date", "type": "date" },
+          { "name": "effective_date", "type": "date" },
+          { "name": "workers", "type": "integer" },
+          { "name": "layoff_type", "type": "string" },
+          { "name": "place", "type": "string" },
+          { "name": "source_url", "type": "string", "format": "uri" },
+          { "name": "nextchapter_url", "type": "string", "format": "uri" }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this data, please cite it as below and link to the NextChapter layoff tracker."
+title: "U.S. layoff notices (WARN Act), collected from state labor departments"
+type: dataset
+authors:
+  - name: "NextChapter"
+url: "https://launchyournextchapter.com/layoffs"
+repository-code: "https://github.com/justinkulla81/nextchapter-layoff-notices"
+license: CC-BY-4.0
+abstract: "WARN Act layoff notices published by U.S. state labor departments, collected into one CSV file with the employer, state, dates, workers named and the state's own record."
+keywords:
+  - layoffs
+  - WARN Act
+  - labor market
+  - unemployment
